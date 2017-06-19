@@ -2,11 +2,11 @@ node {
     def app
 
     stage('Clone repository') {
-        git url: 'https://github.com/abacl7/cicd-demo-app.git'
+        checkout scm
     }
 
     stage('Build image') {
-        app = sh "sudo docker build -t abacl7/cicd-demo-app ."
+        app = docker.build 'abacl7/cicd-demo-app'
     }
 
     stage('Push image') {

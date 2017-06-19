@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build 'abacl7/cicd-demo-app'
+        app = docker.build('abacl7/cicd-demo-app')
     }
 
     stage('Push image') {

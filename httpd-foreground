@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+# Apache gets grumpy about PID files pre-existing
+if [ -e /run/httpd/httpd.pid ]; then
+  rm -f /run/httpd/httpd.pid
+fi
+
+exec httpd -DFOREGROUND

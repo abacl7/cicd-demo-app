@@ -11,7 +11,7 @@ node {
 
     stage('Push image') {
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-key') {
-            app.push("${env.BUILD_DATE_FORMATTED}")
+            app.push("${BUILD_DATE_FORMATTED}")
             app.push("latest")
         }
     }
